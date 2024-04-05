@@ -1,0 +1,13 @@
+{
+  "name": "jobster-api-typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/MaNaSDeo/Jobster-api-Typescript.git",
+  "author": "MaNaSDeo <rmnslogin@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev:frontend": "cd frontend && yarn dev",
+    "dev:backend": "cd backend && yarn dev",
+    "dev": "concurrently \"yarn run dev:frontend\" \"yarn run dev:backend\""
+  }
+}
