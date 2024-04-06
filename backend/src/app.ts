@@ -33,7 +33,7 @@ app.get("/api/v1", (req: Request, res: Response) => {
 // Function to start the server and connect to the database
 const start = async (): Promise<void> => {
   try {
-    await connectDB(process.env.MONGO_URI!);
+    await connectDB(process.env.MONGO_URI!); // '!' -- Definite assignment assertion
     app.listen(port, () => {
       console.log(`Server is running on port ${port}`);
     });
