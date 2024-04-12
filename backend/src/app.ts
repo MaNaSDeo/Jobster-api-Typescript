@@ -6,6 +6,7 @@ import express, {
 } from "express";
 import * as dotenv from "dotenv";
 import connectDB from "./db/connect";
+import authRouter from "./routes/auth";
 
 dotenv.config(); // Load environment variables from .env file
 
@@ -26,9 +27,12 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
-app.get("/api/v1", (req: Request, res: Response) => {
+app.get("/", (req: Request, res: Response) => {
   res.send("<h1>Joster API</h1>");
 });
+
+// Routes
+app.use("/api/v1/auth", authRouter);
 
 // Function to start the server and connect to the database
 const start = async (): Promise<void> => {
